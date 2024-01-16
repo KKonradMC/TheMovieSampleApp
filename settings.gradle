@@ -1,0 +1,25 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "TheMovieSampleApp"
+include ':app'
+include ':feature:domain'
+include ':feature:data'
+include ':feature:presentation'
+include ':common:domain'
+include ':libraries:network'
+include ':libraries:ds'
+include ':libraries:image-loader'
+include ':libraries:live-data-ext'

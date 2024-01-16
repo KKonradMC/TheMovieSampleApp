@@ -1,0 +1,12 @@
+apply from: paths.lib_configuration
+apply from: paths.di_configuration
+
+android {
+    namespace 'com.kkonradsoftware.feature.data'
+}
+
+dependencies {
+    implementation project(":feature:domain")
+    implementation project(":libraries:network")
+    testImplementation "junit:junit:$versions.test.junit"
+}

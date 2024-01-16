@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.kkonradsoftware.feature.presentation.details.NewMovieDetailsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@{vm.title}"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="@dimen/elevation"
+            android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/toolbarStarIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginStart="8dp"
+                android:tint="@color/yellow_500"
+                app:imageRes="@{vm.favouriteRes}"
+                android:onClick="@{() -> vm.changeFavourite()}"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <com.kkonradsoftware.libraries.ds.rate.RateView
+            android:id="@+id/rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_regular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:rateViewData="@{vm.rateViewData}"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/posterView"
+            android:layout_width="@dimen/list_item_image_width"
+            android:layout_height="@dimen/list_item_image_height"
+            android:layout_below="@id/toolbar"
+            android:scaleType="centerCrop"
+            app:imagePath="@{vm.imagePath}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rate"
+            android:layout_marginTop="@dimen/space_regular"
+            android:layout_marginStart="@dimen/space_regular"/>
+
+        <TextView
+            android:id="@+id/voteLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{vm.voteLabel}"
+            android:layout_marginStart="@dimen/space_regular"
+            android:layout_marginEnd="@dimen/space_regular"
+            android:layout_marginTop="@dimen/space_regular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rate"/>
+
+        <TextView
+            android:id="@+id/releaseData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{vm.releaseDate}"
+            android:layout_marginStart="@dimen/space_regular"
+            android:layout_marginEnd="@dimen/space_regular"
+            android:layout_marginTop="@dimen/space_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/posterView"/>
+
+        <TextView
+            android:id="@+id/overview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{vm.overview}"
+            android:layout_marginStart="@dimen/space_regular"
+            android:layout_margin="@dimen/space_regular"
+            android:layout_marginTop="@dimen/space_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/releaseData"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

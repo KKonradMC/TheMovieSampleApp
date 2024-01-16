@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewData"
+            type="com.kkonradsoftware.libraries.ds.rate.RateViewData" />
+
+    </data>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/first_item"
+            app:imageRes="@{viewData.getStartRes(0)}"
+            tools:src="@drawable/baseline_star_24"
+            android:layout_width="@dimen/small_icon_size"
+            android:layout_height="@dimen/small_icon_size"
+            android:tint="@color/yellow_500" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/second_item"
+            app:imageRes="@{viewData.getStartRes(1)}"
+            tools:src="@drawable/baseline_star_24"
+            android:layout_width="@dimen/small_icon_size"
+            android:layout_height="@dimen/small_icon_size"
+            android:tint="@color/yellow_500" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/third_item"
+            app:imageRes="@{viewData.getStartRes(2)}"
+            tools:src="@drawable/baseline_star_24"
+            android:layout_width="@dimen/small_icon_size"
+            android:layout_height="@dimen/small_icon_size"
+            android:tint="@color/yellow_500" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/fourth_item"
+            app:imageRes="@{viewData.getStartRes(3)}"
+            tools:src="@drawable/baseline_star_24"
+            android:layout_width="@dimen/small_icon_size"
+            android:layout_height="@dimen/small_icon_size"
+            android:tint="@color/yellow_500" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/fifth_item"
+            app:imageRes="@{viewData.getStartRes(4)}"
+            tools:src="@drawable/baseline_star_24"
+            android:layout_width="@dimen/small_icon_size"
+            android:layout_height="@dimen/small_icon_size"
+            android:tint="@color/yellow_500" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/sixth_item"
+            app:imageRes="@{viewData.getStartRes(5)}"
+            tools:src="@drawable/baseline_star_24"
+            android:layout_width="@dimen/small_icon_size"
+            android:layout_height="@dimen/small_icon_size"
+            android:tint="@color/yellow_500" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/seventh_item"
+            app:imageRes="@{viewData.getStartRes(6)}"
+            tools:src="@drawable/baseline_star_24"
+            android:layout_width="@dimen/small_icon_size"
+            android:layout_height="@dimen/small_icon_size"
+            android:tint="@color/yellow_500" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/eight_item"
+            app:imageRes="@{viewData.getStartRes(7)}"
+            tools:src="@drawable/baseline_star_half_24"
+            android:layout_width="@dimen/small_icon_size"
+            android:layout_height="@dimen/small_icon_size"
+            android:tint="@color/yellow_500" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ninth_item"
+            app:imageRes="@{viewData.getStartRes(8)}"
+            tools:src="@drawable/baseline_star_outline_24"
+            android:layout_width="@dimen/small_icon_size"
+            android:layout_height="@dimen/small_icon_size"
+            android:tint="@color/yellow_500" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/tenth_item"
+            app:imageRes="@{viewData.getStartRes(9)}"
+            tools:src="@drawable/baseline_star_outline_24"
+            android:layout_width="@dimen/small_icon_size"
+            android:layout_height="@dimen/small_icon_size"
+            android:tint="@color/yellow_500" />
+    </LinearLayout>
+</layout>

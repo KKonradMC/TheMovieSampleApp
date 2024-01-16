@@ -1,0 +1,25 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+apply from: paths.lib_configuration
+
+android {
+    namespace 'com.kkonradsoftware.libraries.ds'
+
+    buildFeatures {
+        dataBinding true
+    }
+}
+kapt {
+    generateStubs = true
+}
+
+dependencies {
+    implementation project(":libraries:image-loader")
+    implementation "androidx.core:core-ktx:$versions.androidx.core_ktx"
+    api "com.google.android.material:material:$versions.google.material"
+    api "androidx.databinding:databinding-common:$versions.androidx.dataBinding"
+    testImplementation "junit:junit:$versions.test.junit"
+}

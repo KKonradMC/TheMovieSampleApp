@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="itemData"
+            type="com.kkonradsoftware.feature.presentation.list.model.MovieListItemData" />
+    </data>
+
+    <com.kkonradsoftware.libraries.ds.listitem.ListItem
+        app:listItemData="@{itemData.listItemData}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> itemData.onItemClick.invoke(itemData.result) }">
+
+    </com.kkonradsoftware.libraries.ds.listitem.ListItem>
+</layout>

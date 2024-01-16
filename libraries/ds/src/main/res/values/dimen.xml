@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="space_medium">8dp</dimen>
+    <dimen name="space_regular">16dp</dimen>
+    <dimen name="space_large">24dp</dimen>
+
+    <dimen name="elevation">4dp</dimen>
+
+    <dimen name="card_radius">24dp</dimen>
+
+    <dimen name="small_icon_size">24dp</dimen>
+    <dimen name="big_icon_size">48dp</dimen>
+
+    <dimen name="min_card_view_height">240dp</dimen>
+
+    <dimen name="list_item_image_width">100dp</dimen>
+    <dimen name="list_item_image_height">150dp</dimen>
+</resources>

@@ -1,0 +1,21 @@
+apply from: paths.lib_configuration
+apply from: paths.di_configuration
+
+android {
+    namespace 'com.kkonradsoftware.libraries.network'
+
+    buildFeatures.buildConfig true
+
+    defaultConfig {
+        buildConfigField 'String', 'API_KEY', "\"${THE_MOVIE_API_AUTHORIZATION}\""
+        buildConfigField 'String', 'HOST', '\"https://api.themoviedb.org/\"'
+    }
+}
+
+dependencies {
+    api project(":common:domain")
+    api "com.squareup.retrofit2:retrofit:$versions.data_tools.retrofit"
+    api "com.squareup.retrofit2:converter-gson:$versions.data_tools.retrofit"
+    api "com.squareup.okhttp3:okhttp:$versions.data_tools.okhttp"
+    api "com.squareup.okhttp3:logging-interceptor:$versions.data_tools.okhttp"
+}

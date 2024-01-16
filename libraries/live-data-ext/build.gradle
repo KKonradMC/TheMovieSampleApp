@@ -1,0 +1,11 @@
+apply from: paths.lib_configuration
+apply from: paths.di_configuration
+
+android {
+    namespace 'com.kkonradsoftware.libraries.livedataext'
+}
+
+dependencies {
+
+    api "androidx.lifecycle:lifecycle-livedata-ktx:$versions.androidx.lifecycle_livedata_ktx"
+}

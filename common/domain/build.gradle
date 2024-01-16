@@ -1,0 +1,5 @@
+apply from: paths.lib_configuration
+
+android {
+    namespace 'com.kkonradsoftware.lib.domain'
+}

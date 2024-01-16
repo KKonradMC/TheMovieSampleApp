@@ -1,0 +1,16 @@
+apply from: paths.lib_configuration
+
+android {
+    namespace 'com.kkonradsoftware.libraries.imageloader'
+
+    buildFeatures.buildConfig true
+
+    defaultConfig {
+        buildConfigField 'String', 'IMAGE_ROOT', '\"https://image.tmdb.org/t/p/original\"'
+    }
+}
+
+dependencies {
+
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+}

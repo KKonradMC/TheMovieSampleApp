@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewData"
+            type="com.kkonradsoftware.libraries.ds.listitem.ListItemData" />
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/min_card_view_height"
+        android:elevation="@dimen/elevation"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/space_medium"
+        android:shadowColor="@color/cardview_shadow_start_color"
+        app:cardCornerRadius="@dimen/card_radius"
+        app:cardElevation="@dimen/elevation">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:padding="@dimen/space_regular"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image"
+                app:imagePath="@{viewData.imagePath}"
+                android:layout_width="@dimen/list_item_image_width"
+                android:layout_height="@dimen/list_item_image_height"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/rate"/>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:textAlignment="textStart"
+                app:text="@{viewData.title}"
+                app:layout_constraintEnd_toStartOf="@+id/favourite"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/vote_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:text="@{viewData.voteLabel}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/rate" />
+
+
+            <com.kkonradsoftware.libraries.ds.rate.RateView
+                android:id="@+id/rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:rateViewData="@{viewData.rateViewData}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/favourite"
+                app:imageRes="@{viewData.favouriteRes}"
+                android:onClick="@{ () -> viewData.onFavouriteClick.invoke(viewData.id)}"
+                android:layout_width="@dimen/big_icon_size"
+                android:layout_height="@dimen/big_icon_size"
+                android:tint="@color/yellow_500"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
